@@ -1402,6 +1402,10 @@ video {
 		padding-right: 1.5rem;
 	}
 
+	.lg\:pr-14 {
+		padding-right: 3.5rem;
+	}
+
 	.lg\:pl-12 {
 		padding-left: 3rem;
 	}
@@ -1413,6 +1417,16 @@ video {
 	.lg\:text-2xl {
 		font-size: 1.5rem;
 		line-height: 2rem;
+	}
+
+	.lg\:text-xl {
+		font-size: 1.25rem;
+		line-height: 1.75rem;
+	}
+
+	.lg\:text-lg {
+		font-size: 1.125rem;
+		line-height: 1.75rem;
 	}
 }
 
