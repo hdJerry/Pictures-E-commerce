@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Wrapper } from '../GlobalStyles';
+import Product from '../Product';
 
 const MainContent = ({data}) => {
     return (
@@ -7,9 +8,9 @@ const MainContent = ({data}) => {
             <Container>
                 <div className="px-4 lg:p-0">
                     <header className="flex justify-between items-center mb-10 mt-12">
-                        <h1 className="text-xl lg:text-2xl font-bold">
+                        <h1 className="text-xl lg:text-2xl font-bold tracking-wide">
                             <span>Photography</span>
-                            <span className="mx-2">/</span>
+                            <span className="mx-4">/</span>
                             <span className="text-text-2 font-normal">Premium Photos</span>
                         </h1>
 
@@ -49,12 +50,14 @@ const MainContent = ({data}) => {
                         </span>
                     </header>
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 my-5">
-                        <div className="col-span-12 lg:col-span-4 bg-border h-40"></div>
-                        <div className="col-span-12 lg:col-span-8">
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-                                <div className="h-44 bg-border"></div>
-                                <div className="h-44 bg-border"></div>
-                                <div className="h-44 bg-border"></div>
+                        <div className="col-span-12 lg:col-span-4 xl:col-span-3 bg-border h-40"></div>
+                        <div className="col-span-12 lg:col-span-8 xl:col-span-9">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                                {
+                                    data && data.map((res, index) => (
+                                        <Product data={res} key={index} />
+                                    ))
+                                }
                             </div>
                         </div>
                         

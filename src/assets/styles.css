@@ -741,6 +741,11 @@ video {
 	margin-bottom: 1.5rem;
 }
 
+.mx-4 {
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
 .mr-2 {
 	margin-right: 0.5rem;
 }
@@ -869,6 +874,22 @@ video {
 	height: 9rem;
 }
 
+.h-56 {
+	height: 14rem;
+}
+
+.h-72 {
+	height: 18rem;
+}
+
+.h-80 {
+	height: 20rem;
+}
+
+.h-96 {
+	height: 24rem;
+}
+
 .h-\[200px\] {
 	height: 200px;
 }
@@ -923,6 +944,10 @@ video {
 	transform: var(--tw-transform);
 }
 
+.cursor-pointer {
+	cursor: pointer;
+}
+
 .resize {
 	resize: both;
 }
@@ -973,6 +998,14 @@ video {
 
 .gap-8 {
 	gap: 2rem;
+}
+
+.gap-14 {
+	gap: 3.5rem;
+}
+
+.gap-12 {
+	gap: 3rem;
 }
 
 .overflow-auto {
@@ -1258,6 +1291,14 @@ video {
 	line-height: 1.25rem;
 }
 
+.tracking-wide {
+	letter-spacing: 0.025em;
+}
+
+.tracking-wider {
+	letter-spacing: 0.05em;
+}
+
 .text-white {
 	--tw-text-opacity: 1;
 	color: rgba(255, 255, 255, var(--tw-text-opacity));
@@ -1314,6 +1355,14 @@ video {
 
 .transition-all {
 	transition-property: all;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 150ms;
+}
+
+.transition {
+	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	transition-duration: 150ms;
 }
@@ -1427,6 +1476,14 @@ video {
 }
 
 @media (min-width: 1280px) {
+
+	.xl\:col-span-3 {
+		grid-column: span 3 / span 3;
+	}
+
+	.xl\:col-span-9 {
+		grid-column: span 9 / span 9;
+	}
 
 	.xl\:gap-24 {
 		gap: 6rem;

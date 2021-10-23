@@ -1,7 +1,6 @@
 import React from 'react';
 import prd from './helpers/functions';
 import { onValue } from '@firebase/database';
-import Product from './components/Product';
 import { Wrapper } from './components/GlobalStyles';
 import NavBar from './components/navbar';
 import PhotoOfTheDay from './components/PhotoOfTheDay';
