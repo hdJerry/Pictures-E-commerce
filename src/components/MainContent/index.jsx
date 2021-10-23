@@ -1,8 +1,14 @@
 import React from 'react';
 import { Container, Wrapper } from '../GlobalStyles';
-import Product from '../Product';
+import Allproducts from './AllProducts';
 
 const MainContent = ({data}) => {
+    const [start, setStart] = React.useState(0);
+    const [end, setEnd] = React.useState(6);
+
+    const FilterProducts = React.useCallback(() => {
+            return data.slice(start, end);
+    }, [end, start, data]);
     return (
         <Wrapper>
             <Container>
@@ -52,13 +58,7 @@ const MainContent = ({data}) => {
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 my-5">
                         <div className="col-span-12 lg:col-span-4 xl:col-span-3 bg-border h-40"></div>
                         <div className="col-span-12 lg:col-span-8 xl:col-span-9">
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-                                {
-                                    data && data.map((res, index) => (
-                                        <Product data={res} key={index} />
-                                    ))
-                                }
-                            </div>
+                            <Allproducts FilterProducts={FilterProducts()}  />
                         </div>
                         
                     </div>
