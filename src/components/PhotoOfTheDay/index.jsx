@@ -2,10 +2,11 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { peopleAlso, photoOfTheDay } from '../../helpers/datas';
 import { AddItem } from '../../store/Cart/actions';
-import { Container, Wrapper } from '../GlobalStyles';
+import { Container, ImageLoader, Wrapper } from '../GlobalStyles';
 import Contentspage from './ContentsPage';
 const PhotoOfTheDay = () => {
     const dispatch = useDispatch();
+    const [loading, setLoading] = React.useState(true);
     
     return (
         <Wrapper>
@@ -34,13 +35,13 @@ const PhotoOfTheDay = () => {
 
                         {/* Image section */}
 
-                        <div className="flex justify-center items-center w-full h-[200px] md:h-[553px] relative">
-                            <img src={photoOfTheDay.image.src} alt="imagine" className="w-full h-full object-cover" />
+                        <ImageLoader is_loading={loading} className="flex justify-center items-center w-full h-[200px] md:h-[553px] relative">
+                            <img src={photoOfTheDay.image.src} alt="imagine" onLoad={() => setLoading(false)} className="w-full h-full object-cover" />
 
                             <div className="absolute left-0 bottom-0 px-12 py-4 bg-white text-black text-lg font-bold">
                                 Photo of the day
                             </div>
-                        </div>
+                        </ImageLoader>
 
                         <button onClick={() => {
                             dispatch(AddItem({

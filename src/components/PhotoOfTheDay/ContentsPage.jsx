@@ -1,4 +1,5 @@
 import React from 'react';
+import Peoplealsoimg from './PeopleAlsoImg';
 
 const Contentspage = ({ photoOfTheDay, peopleAlso }) => {
     return (
@@ -29,9 +30,7 @@ const Contentspage = ({ photoOfTheDay, peopleAlso }) => {
                 <div className="grid grid-cols-3 gap-8">
                     {
                         peopleAlso.map((res, index) => (
-                            <div key={index} className="h-44 lg:h-36 bg-border">
-                                <img src={res} alt="artwork" className="w-full h-full object-cover" />
-                            </div>
+                            <Peoplealsoimg image={res} key={index} />
                         ))
                     }
 
