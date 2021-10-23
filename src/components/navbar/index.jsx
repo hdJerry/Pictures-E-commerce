@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import GlobalFunctions from '../../helpers/Global';
-import { EmptyCart } from '../../store/Cart/actions';
 import { showDropDown } from '../../store/CartDropDown/actions';
 import CartDropDown from '../CartDropDown';
 import { Container, Wrapper } from '../GlobalStyles';
@@ -42,7 +41,7 @@ const NavBar = () => {
                                 <path d="M38.1797 45.9844C38.1797 48.6013 40.3089 50.7305 42.9258 50.7305C45.5428 50.7305 47.6719 48.6013 47.6719 45.9844C47.6719 43.3674 45.5428 41.2383 42.9258 41.2383C40.3089 41.2383 38.1797 43.3674 38.1797 45.9844ZM42.9258 44.4023C43.798 44.4023 44.5079 45.1122 44.5079 45.9844C44.5079 46.8566 43.798 47.5664 42.9258 47.5664C42.0537 47.5664 41.3438 46.8566 41.3438 45.9844C41.3438 45.1122 42.0537 44.4023 42.9258 44.4023Z" fill="black" />
                             </svg>
                             { bcartItems && bcartItems.length > 0 && (
-                                <span className="block absolute -bottom-3 -right-3 bg-black text-white flex justify-center items-center w-5 h-5 text-xs p-1">
+                                <span className="absolute -bottom-3 -right-3 bg-black text-white flex justify-center items-center w-5 h-5 text-xs p-1">
                                     {cartItemsCount(bcartItems)}
                                 </span>
                                 )

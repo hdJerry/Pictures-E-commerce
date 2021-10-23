@@ -50,7 +50,13 @@ const MainContent = ({data}) => {
                     </header>
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 my-5">
                         <div className="col-span-12 lg:col-span-4 bg-border h-40"></div>
-                        <div className="col-span-12 lg:col-span-8 bg-text h-40"></div>
+                        <div className="col-span-12 lg:col-span-8">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                                <div className="h-44 bg-border"></div>
+                                <div className="h-44 bg-border"></div>
+                                <div className="h-44 bg-border"></div>
+                            </div>
+                        </div>
                         
                     </div>
 

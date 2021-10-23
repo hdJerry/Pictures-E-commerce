@@ -1345,6 +1345,10 @@ video {
 	.md\:h-\[553px\] {
 		height: 553px;
 	}
+
+	.md\:grid-cols-3 {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
 }
 
 @media (min-width: 1024px) {
@@ -1389,25 +1393,17 @@ video {
 		justify-content: flex-end;
 	}
 
-	.lg\:gap-24 {
-		gap: 6rem;
-	}
-
 	.lg\:p-0 {
 		padding: 0px;
 	}
 
-	.lg\:px-6 {
-		padding-left: 1.5rem;
-		padding-right: 1.5rem;
+	.lg\:px-4 {
+		padding-left: 1rem;
+		padding-right: 1rem;
 	}
 
 	.lg\:pr-14 {
 		padding-right: 3.5rem;
-	}
-
-	.lg\:pl-12 {
-		padding-left: 3rem;
 	}
 
 	.lg\:text-right {
@@ -1432,9 +1428,17 @@ video {
 
 @media (min-width: 1280px) {
 
+	.xl\:gap-24 {
+		gap: 6rem;
+	}
+
 	.xl\:px-10 {
 		padding-left: 2.5rem;
 		padding-right: 2.5rem;
+	}
+
+	.xl\:pl-12 {
+		padding-left: 3rem;
 	}
 }
 

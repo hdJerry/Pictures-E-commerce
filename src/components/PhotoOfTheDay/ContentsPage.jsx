@@ -3,7 +3,7 @@ import Peoplealsoimg from './PeopleAlsoImg';
 
 const Contentspage = ({ photoOfTheDay, peopleAlso }) => {
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-24 my-4">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 xl:gap-24 my-4">
             <div className="col-span-12 lg:col-span-7">
                 <header className="py-3 text-2xl lg:text-xl font-bold text-black">
                     About the {photoOfTheDay.name}
@@ -22,7 +22,7 @@ const Contentspage = ({ photoOfTheDay, peopleAlso }) => {
 
             </div>
 
-            <div className="col-span-12 lg:col-span-5 lg:pl-12">
+            <div className="col-span-12 lg:col-span-5 xl:pl-12">
                 <header className="py-3 text-xl font-bold text-black flex justify-start lg:justify-end items-center mb-3">
                     People also buy
                 </header>
