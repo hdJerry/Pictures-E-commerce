@@ -59,6 +59,10 @@ const MainContent = ({data}) => {
                         <div className="col-span-12 lg:col-span-4 xl:col-span-3 bg-border h-40"></div>
                         <div className="col-span-12 lg:col-span-8 xl:col-span-9">
                             <Allproducts FilterProducts={FilterProducts()}  />
+
+                            <div className="flex justify-center items-center my-4 p-3">
+                                {/* Pagination */}
+                            </div>
                         </div>
                         
                     </div>
