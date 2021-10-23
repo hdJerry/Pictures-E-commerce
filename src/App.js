@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import prd from './helpers/functions';
+import { onValue } from '@firebase/database';
+import Product from './components/Product';
+import { Wrapper } from './components/GlobalStyles';
+import NavBar from './components/navbar';
+import PhotoOfTheDay from './components/PhotoOfTheDay';
+import MainContent from './components/MainContent';
 
 function App() {
+
+  const [products, setProducts] = React.useState([])
+
+  React.useEffect(() => {
+    let mounted = true;
+    if (mounted) {
+      onValue(prd, (snapshot) => {
+        console.log(snapshot.val());
+        setProducts(snapshot.val())
+      })
+    }
+    return () => mounted = false;
+  },[])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+        <NavBar />
+        <PhotoOfTheDay />
+        <MainContent data={products} />
+    </Wrapper>
   );
 }
 

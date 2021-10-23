@@ -1,0 +1,243 @@
+{
+    "products": [
+        {
+            "id": 7,
+            "name": "Red Bench",
+            "category": "people",
+            "price": 3.89,
+            "currency": "USD",
+            "image": {
+                "src": "https://images.pexels.com/photos/2477300/pexels-photo-2477300.jpeg?auto=compress&cs=tinysrgb&dpr=2",
+                "alt": ""
+            },
+            "bestseller": true,
+            "featured": false,
+            "details": null
+        },
+        {
+            "id": 8,
+            "name": "Egg Balloon",
+            "category": "food",
+            "price": 93.89,
+            "currency": "USD",
+            "image": {
+                "src": "https://images.pexels.com/photos/3866851/pexels-photo-3866851.jpeg?auto=compress&cs=tinysrgb&dpr=2",
+                "alt": ""
+            },
+            "bestseller": false,
+            "featured": false,
+            "details": null
+        },
+        {
+            "id": 9,
+            "name": "Man",
+            "category": "people",
+            "price": 100,
+            "currency": "USD",
+            "image": {
+                "src": "https://images.pexels.com/photos/1142941/pexels-photo-1142941.jpeg?auto=compress&cs=tinysrgb&dpr=2",
+                "alt": ""
+            },
+            "bestseller": false,
+            "featured": false,
+            "details": null
+        },
+        {
+            "id": 11,
+            "name": "Architecture",
+            "category": "landmarks",
+            "price": 101,
+            "currency": "USD",
+            "dimmentions": {
+                "width": 1020,
+                "height": 1020
+            },
+            "image": {
+                "src": "https://images.pexels.com/photos/2184504/pexels-photo-2184504.jpeg?auto=compress&cs=tinysrgb&dpr=2",
+                "alt": ""
+            },
+            "bestseller": false,
+            "featured": false,
+            "details": null
+        },
+        {
+            "id": 10,
+            "name": "Samurai King Restling",
+            "category": "landmarks",
+            "price": 101,
+            "currency": "USD",
+            "image": {
+                "src": "https://images.pexels.com/photos/58997/pexels-photo-58997.jpeg?auto=compress&cs=tinysrgb&dpr=2",
+                "alt": ""
+            },
+            "bestseller": false,
+            "featured": true,
+            "details": {
+                "dimmentions": {
+                    "width": 1020,
+                    "height": 1020
+                },
+                "size": 15000,
+                "description": "So how did the classical Latin become so incoherent? According to McClintock, a 15th century typesetter likely scrambled part of Cicero's De Finibus in order to provide placeholder text to mockup various fonts for a type specimen book.So how did the classical Latin become so incoherent? According to McClintock, a 15th century typesetter likely scrambled part of Cicero's De Finibus in order to provide placeholder text to mockup various fonts for a type specimen book.So how did the classical Latin become so incoherent? According to McClintock.",
+                "recommendations": [ 
+                {
+                    "src": "",
+                    "alt": ""
+                },
+                {
+                    "src": "",
+                    "alt": ""
+                },
+                {
+                    "src": "",
+                    "alt": ""
+                }
+            ]
+        }
+    },
+    {
+        "id": 12,
+        "name": "City and Bicycle",
+        "category": "city",
+        "price": 101,
+        "currency": "USD",
+        "dimmentions": {
+            "width": 1020,
+            "height": 1020
+        },
+        "image": {
+            "src": "https://images.pexels.com/photos/1070945/pexels-photo-1070945.jpeg?auto=compress&cs=tinysrgb&dpr=2",
+            "alt": ""
+        },
+        "bestseller": false,
+        "featured": false,
+        "details": null
+    },
+    {
+        "id": 13,
+        "name": "People Crowded",
+        "category": "people",
+        "price": 101,
+        "currency": "USD",
+        "dimmentions": {
+            "width": 1020,
+            "height": 1020
+        },
+        "image": {
+            "src": "https://images.pexels.com/photos/1687093/pexels-photo-1687093.jpeg?auto=compress&cs=tinysrgb&dpr=2",
+            "alt": ""
+        },
+        "bestseller": false,
+        "featured": false,
+        "details": null
+    },
+    {
+        "id": 14,
+        "name": "Green Forest",
+        "category": "nature",
+        "price": 101,
+        "currency": "USD",
+        "dimmentions": {
+            "width": 1020,
+            "height": 1020
+        },
+        "image": {
+            "src": "https://images.pexels.com/photos/15286/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2",
+            "alt": ""
+        },
+        "bestseller": false,
+        "featured": false,
+        "details": null
+    },
+    {
+        "id": 15,
+        "name": "Road & Trees",
+        "category": "landmarks",
+        "price": 101,
+        "currency": "USD",
+        "dimmentions": {
+            "width": 1020,
+            "height": 1020
+        },
+        "image": {
+            "src": "https://images.pexels.com/photos/1612461/pexels-photo-1612461.jpeg?auto=compress&cs=tinysrgb&dpr=2",
+            "alt": ""
+        },
+        "bestseller": false,
+        "featured": false,
+        "details": null
+    },
+    {
+        "id": 16,
+        "name": "Mountain Trees",
+        "category": "nature",
+        "price": 101,
+        "currency": "USD",
+        "dimmentions": {
+            "width": 1020,
+            "height": 1020
+        },
+        "image": {
+            "src": "https://images.pexels.com/photos/1743165/pexels-photo-1743165.jpeg?auto=compress&cs=tinysrgb&dpr=2",
+            "alt": ""
+        },
+        "bestseller": false,
+        "featured": false,
+        "details": null
+    },
+    {
+        "id": 17,
+        "name": "Night in the City",
+        "category": "city",
+        "price": 101,
+        "currency": "USD",
+        "dimmentions": {
+            "width": 1020,
+            "height": 1020
+        },
+        "image": {
+            "src": "https://images.pexels.com/photos/2832039/pexels-photo-2832039.jpeg?auto=compress&cs=tinysrgb&dpr=2",
+            "alt": ""
+        },
+        "bestseller": false,
+        "featured": false,
+        "details": null
+    },
+    {
+        "id": 18,
+        "name": "Hard Desert Stone",
+        "category": "nature",
+        "price": 101,
+        "currency": "USD",
+        "dimmentions": {
+            "width": 1020,
+            "height": 1020
+        },
+        "image": {
+            "src": "https://images.pexels.com/photos/33041/antelope-canyon-lower-canyon-arizona.jpg?auto=compress&cs=tinysrgb&dpr=2",
+            "alt": ""
+        },
+        "bestseller": false,
+        "featured": false,
+        "details": null
+    },
+    {
+        "id": 19,
+        "name": "Beauty",
+        "category": "man",
+        "price": 101,
+        "currency": "USD",
+        "dimmentions": {
+            "width": 1020,
+            "height": 1020
+        },
+        "image": {
+            "src": "https://images.pexels.com/photos/1886694/pexels-photo-1886694.jpeg?auto=compress&cs=tinysrgb&dpr=2",
+            "alt": ""
+        },
+        "bestseller": false,
+        "featured": false,
+        "details": null
+    }
+]
+}
