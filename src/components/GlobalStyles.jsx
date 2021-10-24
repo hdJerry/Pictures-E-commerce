@@ -26,6 +26,9 @@ export const Container = styled.div`
 `;
 
 export const ImageLoader = styled.div`
+     display: flex;
+     justify-content: center;
+     align-items: center;
     background: linear-gradient(90deg,  #f8f9fb, #e2e6f3, #f8f9fb, #e2e6f3);
     ${props => props.is_loading && css`
         animation: ${loading} 2s ease infinite;
