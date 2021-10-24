@@ -2,13 +2,24 @@ import React from 'react';
 import { Container, Wrapper } from '../GlobalStyles';
 import Allproducts from './AllProducts';
 
-const MainContent = ({data}) => {
+const MainContent = ({ data, fetching }) => {
     const [start, setStart] = React.useState(0);
+    const [currentPage, setCurrentPage] = React.useState(1);
     const [end, setEnd] = React.useState(6);
+    const limit = 6;
+    const pageNumber = [...Array(data.length < limit ? 1 : Math.ceil(data.length / limit)).keys()]
 
     const FilterProducts = React.useCallback(() => {
             return data.slice(start, end);
     }, [end, start, data]);
+
+    const paginateNumber = React.useCallback((num) => {
+        let trimStart = (num - 1) * limit;
+        let trimEnd = trimStart + limit;
+        setStart(trimStart);
+        setEnd(trimEnd);
+        setCurrentPage(num)
+    }, [limit])
     return (
         <Wrapper>
             <Container>
@@ -42,7 +53,7 @@ const MainContent = ({data}) => {
                                     </span>
                                     <span className="text-text-2 font-normal ml-2 text-xl">Sort By</span>
                                 </button>
-
+                                   
                                 <button className="hidden lg:flex items-center">
                                     {/* Sort dropdown */}
                                     <span className="mr-2 text-xl">Price</span>
@@ -60,9 +71,45 @@ const MainContent = ({data}) => {
                         <div className="col-span-12 lg:col-span-8 xl:col-span-9">
                             <Allproducts FilterProducts={FilterProducts()}  />
 
-                            <div className="flex justify-center items-center my-4 p-3">
-                                {/* Pagination */}
-                            </div>
+                            {
+                                !fetching && (
+                                <div className="flex justify-center items-center my-4 p-3">
+                                    {/* Pagination */}
+                                    <button onClick={() => {
+                                        setStart(prevState => prevState - limit);
+                                        setEnd(prevState => prevState - limit);
+                                        }} className="flex justify-center items-center mr-2" disabled={start === 0}>
+                                        <svg width="13" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11 2L3 10L11 18" stroke="black" stroke-width="3" />
+                                        </svg>
+                                    </button>
+
+                                        {
+                                            pageNumber && pageNumber.map((res, index) => (
+                                                <button onClick={() => {
+                                                    // setCurrentPage(res);
+                                                    // setTimeout(() => {
+                                                    //     console.log('start', (res * currentPage) * limit);
+                                                    // }, 3000);
+                                                    paginateNumber(res+1)
+                                                    // setStart((res * currentPage ) * limit);
+                                                    // setEnd(((res + 1) * currentPage ) * limit);
+                                                }} key={index} className={'mx-2 text-lg ' + (currentPage === res+1 ? ' text-black' : ' text-border')}>{res + 1}</button>
+                                            ))
+                                        }
+
+                                    <button onClick={() => {
+                                        setStart(prevState => prevState + limit);
+                                        setEnd(prevState => prevState + limit);
+                                        }} className="flex justify-center items-center ml-2" disabled={end >= data.length}>
+                                        <svg width="13" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2 2L10 10L2 18" stroke="black" stroke-width="3" />
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                )
+                            }
                         </div>
                         
                     </div>

@@ -8,14 +8,15 @@ import MainContent from './components/MainContent';
 
 function App() {
 
-  const [products, setProducts] = React.useState([])
+  const [products, setProducts] = React.useState([]);
+  const [fetching, setFetching] = React.useState(true);
 
   React.useEffect(() => {
     let mounted = true;
     if (mounted) {
       onValue(prd, (snapshot) => {
-        console.log(snapshot.val());
-        setProducts(snapshot.val())
+        setProducts(snapshot.val());
+        setFetching(false);
       })
     }
     return () => mounted = false;
@@ -24,7 +25,7 @@ function App() {
     <Wrapper>
         <NavBar />
         <PhotoOfTheDay />
-        <MainContent data={products} />
+        <MainContent data={products} fetching={fetching} />
     </Wrapper>
   );
 }
