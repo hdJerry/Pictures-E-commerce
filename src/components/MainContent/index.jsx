@@ -1,17 +1,39 @@
-import React from 'react';
+import React, { memo, useMemo } from 'react';
 import { Container, Wrapper } from '../GlobalStyles';
 import Allproducts from './AllProducts';
 
 const MainContent = ({ data, fetching }) => {
     const [currentPage, setCurrentPage] = React.useState(0);
     const limit = 6;
-    const pageNumber = [...Array(data.length < limit ? 1 : Math.ceil(data.length / limit)).keys()]
+    // const pageNumber = [...Array(data.length < limit ? 1 : Math.ceil(data.length / limit)).keys()]
+    const [filteredData, setFilteredData] = React.useState(data);
+    const [pageNumber, setPageNumber] = React.useState([...Array(filteredData.length < limit ? 1 : Math.ceil(filteredData.length / limit)).keys()]);
+    const [filters, setFilters] = React.useState([]);
 
     const FilterProducts = React.useCallback(() => {
         let start = (currentPage) * (limit);
         let end = start + limit
-            return data.slice(start, end);
-    }, [currentPage, limit, data]);
+        let result = data.filter((res) => {
+            let resp = null
+            if (filters.length > 0) {
+                resp = filters.includes(res['category']);
+            } else {
+                resp = res;
+            }
+
+            return resp;
+        });
+
+
+        let pagenum = [...Array(result.length < limit ? 1 : Math.ceil(result.length / limit)).keys()];
+        setTimeout(() => {
+            setPageNumber(pagenum);
+            setFilteredData(result);
+        }, 300);
+
+        return result.slice(start, end);
+            // return data.slice(start, end);
+    }, [currentPage, limit, data, filters]);
 
     const paginateNumber = (num) => {
         setCurrentPage(num)
@@ -68,7 +90,7 @@ const MainContent = ({ data, fetching }) => {
                             <Allproducts FilterProducts={FilterProducts()}  />
 
                             {
-                                !fetching && (
+                                !fetching && pageNumber.length > 1 && (
                                 <div className="flex justify-center items-center my-4 p-3">
                                     {/* Pagination */}
                                     <button onClick={() => {
@@ -89,7 +111,7 @@ const MainContent = ({ data, fetching }) => {
 
                                     <button onClick={() => {
                                         setCurrentPage(prevState => prevState + 1);
-                                        }} className="flex justify-center items-center ml-2" disabled={currentPage === Math.ceil(data.length/limit) - 1}>
+                                        }} className="flex justify-center items-center ml-2" disabled={currentPage >= Math.ceil(filteredData.length/limit) - 1}>
                                         <svg width="13" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M2 2L10 10L2 18" stroke="black" stroke-width="3" />
                                         </svg>
@@ -108,4 +130,4 @@ const MainContent = ({ data, fetching }) => {
     );
 }
 
-export default MainContent;
+export default memo(MainContent);
