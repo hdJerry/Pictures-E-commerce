@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { EmptyCart } from '../../store/Cart/actions';
 import { hideDropDown } from '../../store/CartDropDown/actions';
 import Cartitem from '../CartItem';
+import { CartDropDownWrapper } from './CartDropDown.style';
 
 const CartDropDown = () => {
 
@@ -21,13 +22,13 @@ const CartDropDown = () => {
                 {
                     bcartItems && bcartItems.length > 0 && (
                         <>
-                            <div className="h-54 w-full border-b-2 border-border overflow-auto my-4">
+                            <CartDropDownWrapper>
                                 {
                                     bcartItems.map((item, index) => (
                                         <Cartitem key={item.id + index} data={item} />
                                     ))
                                 }
-                            </div>
+                            </CartDropDownWrapper>
 
 
                             <button onClick={() => {

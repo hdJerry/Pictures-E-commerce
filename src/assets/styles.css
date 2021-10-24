@@ -818,6 +818,10 @@ video {
 	margin-bottom: 2.5rem;
 }
 
+.mt-1 {
+	margin-top: 0.25rem;
+}
+
 .block {
 	display: block;
 }
@@ -892,6 +896,10 @@ video {
 
 .h-\[200px\] {
 	height: 200px;
+}
+
+.h-\[22rem\] {
+	height: 22rem;
 }
 
 .w-full {
@@ -1273,6 +1281,14 @@ video {
 
 .font-normal {
 	font-weight: 400;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.capitalize {
+	text-transform: capitalize;
 }
 
 .leading-3 {
