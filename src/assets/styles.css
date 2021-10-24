@@ -898,8 +898,8 @@ video {
 	height: 200px;
 }
 
-.h-\[22rem\] {
-	height: 22rem;
+.h-\[30rem\] {
+	height: 30rem;
 }
 
 .w-full {
@@ -936,6 +936,14 @@ video {
 
 .w-96 {
 	width: 24rem;
+}
+
+.w-max {
+	width: max-content;
+}
+
+.w-min {
+	width: min-content;
 }
 
 .border-collapse {
@@ -1448,6 +1456,10 @@ video {
 
 	.lg\:h-36 {
 		height: 9rem;
+	}
+
+	.lg\:h-\[22rem\] {
+		height: 22rem;
 	}
 
 	.lg\:grid-cols-12 {

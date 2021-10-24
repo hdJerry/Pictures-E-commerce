@@ -35,7 +35,7 @@ const PhotoOfTheDay = () => {
 
                         {/* Image section */}
 
-                        <ImageLoader is_loading={loading} className="flex justify-center items-center w-full h-[200px] md:h-[553px] relative">
+                        <ImageLoader is_loading={loading} className="flex justify-center items-center w-full h-[200px] md:h-[553px] relative overflow-hidden">
                             <img src={photoOfTheDay.image.src} alt="imagine" onLoad={() => setLoading(false)} className="w-full h-full object-cover" />
 
                             <div className="absolute left-0 bottom-0 px-12 py-4 bg-white text-black text-lg font-bold">

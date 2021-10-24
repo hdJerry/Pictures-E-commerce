@@ -11,7 +11,7 @@ const Product = ({data}) => {
     let { formatMoney } = GlobalFunctions
     return (
         <ProductWrapper>
-            <ImageLoader is_loading={loading} className="h-[22rem] relative">
+            <ImageLoader is_loading={loading} className="h-[30rem] lg:h-[22rem] relative overflow-hidden">
                 {
                     data.bestseller && (
                         <div className="absolute top-0 left-0 text-black bg-white flex justify-center items-center py-1 px-2 text-sm">Best seller</div>

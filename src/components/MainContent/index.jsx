@@ -3,23 +3,25 @@ import { Container, Wrapper } from '../GlobalStyles';
 import Allproducts from './AllProducts';
 
 const MainContent = ({ data, fetching }) => {
-    const [start, setStart] = React.useState(0);
-    const [currentPage, setCurrentPage] = React.useState(1);
-    const [end, setEnd] = React.useState(6);
+    // const [start, setStart] = React.useState(0);
+    const [currentPage, setCurrentPage] = React.useState(0);
+    // const [end, setEnd] = React.useState(6);
     const limit = 6;
     const pageNumber = [...Array(data.length < limit ? 1 : Math.ceil(data.length / limit)).keys()]
 
     const FilterProducts = React.useCallback(() => {
+        let start = (currentPage) * (limit);
+        let end = start + limit
             return data.slice(start, end);
-    }, [end, start, data]);
+    }, [currentPage, limit, data]);
 
-    const paginateNumber = React.useCallback((num) => {
-        let trimStart = (num - 1) * limit;
-        let trimEnd = trimStart + limit;
-        setStart(trimStart);
-        setEnd(trimEnd);
+    const paginateNumber = (num) => {
+        // let trimStart = (num - 1) * limit;
+        // let trimEnd = trimStart + limit;
+        // setStart(trimStart);
+        // setEnd(trimEnd);
         setCurrentPage(num)
-    }, [limit])
+    };
     return (
         <Wrapper>
             <Container>
@@ -76,10 +78,10 @@ const MainContent = ({ data, fetching }) => {
                                 <div className="flex justify-center items-center my-4 p-3">
                                     {/* Pagination */}
                                     <button onClick={() => {
-                                        setStart(prevState => prevState - limit);
-                                        setEnd(prevState => prevState - end);
+                                        // setStart(prevState => prevState > data.length ? prevState - limit : 0);
+                                        // setEnd(prevState => prevState - limit);
                                         setCurrentPage(prevState => prevState - 1);
-                                        }} className="flex justify-center items-center mr-2" disabled={start === 0}>
+                                        }} className="flex justify-center items-center mr-2" disabled={currentPage === 0}>
                                         <svg width="13" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M11 2L3 10L11 18" stroke="black" stroke-width="3" />
                                         </svg>
@@ -92,18 +94,18 @@ const MainContent = ({ data, fetching }) => {
                                                     // setTimeout(() => {
                                                     //     console.log('start', (res * currentPage) * limit);
                                                     // }, 3000);
-                                                    paginateNumber(res+1)
+                                                    paginateNumber(res)
                                                     // setStart((res * currentPage ) * limit);
                                                     // setEnd(((res + 1) * currentPage ) * limit);
-                                                }} key={index} className={'mx-2 text-lg ' + (currentPage === res+1 ? ' text-black' : ' text-border')}>{res + 1}</button>
+                                                }} key={index} className={'mx-2 text-lg ' + (currentPage === res ? ' text-black' : ' text-border')}>{res + 1}</button>
                                             ))
                                         }
 
                                     <button onClick={() => {
-                                        setStart(prevState => prevState + limit);
-                                        setEnd(prevState => prevState + end);
+                                        // setStart(prevState => prevState + limit);
+                                        // setEnd(prevState => prevState + end);
                                         setCurrentPage(prevState => prevState + 1);
-                                        }} className="flex justify-center items-center ml-2" disabled={end >= data.length}>
+                                        }} className="flex justify-center items-center ml-2" disabled={currentPage === Math.ceil(data.length/limit) - 1}>
                                         <svg width="13" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M2 2L10 10L2 18" stroke="black" stroke-width="3" />
                                         </svg>
