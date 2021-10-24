@@ -77,7 +77,8 @@ const MainContent = ({ data, fetching }) => {
                                     {/* Pagination */}
                                     <button onClick={() => {
                                         setStart(prevState => prevState - limit);
-                                        setEnd(prevState => prevState - limit);
+                                        setEnd(prevState => prevState - end);
+                                        setCurrentPage(prevState => prevState - 1);
                                         }} className="flex justify-center items-center mr-2" disabled={start === 0}>
                                         <svg width="13" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M11 2L3 10L11 18" stroke="black" stroke-width="3" />
@@ -100,7 +101,8 @@ const MainContent = ({ data, fetching }) => {
 
                                     <button onClick={() => {
                                         setStart(prevState => prevState + limit);
-                                        setEnd(prevState => prevState + limit);
+                                        setEnd(prevState => prevState + end);
+                                        setCurrentPage(prevState => prevState + 1);
                                         }} className="flex justify-center items-center ml-2" disabled={end >= data.length}>
                                         <svg width="13" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M2 2L10 10L2 18" stroke="black" stroke-width="3" />
