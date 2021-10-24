@@ -3,9 +3,7 @@ import { Container, Wrapper } from '../GlobalStyles';
 import Allproducts from './AllProducts';
 
 const MainContent = ({ data, fetching }) => {
-    // const [start, setStart] = React.useState(0);
     const [currentPage, setCurrentPage] = React.useState(0);
-    // const [end, setEnd] = React.useState(6);
     const limit = 6;
     const pageNumber = [...Array(data.length < limit ? 1 : Math.ceil(data.length / limit)).keys()]
 
@@ -16,10 +14,6 @@ const MainContent = ({ data, fetching }) => {
     }, [currentPage, limit, data]);
 
     const paginateNumber = (num) => {
-        // let trimStart = (num - 1) * limit;
-        // let trimEnd = trimStart + limit;
-        // setStart(trimStart);
-        // setEnd(trimEnd);
         setCurrentPage(num)
     };
     return (
@@ -78,8 +72,6 @@ const MainContent = ({ data, fetching }) => {
                                 <div className="flex justify-center items-center my-4 p-3">
                                     {/* Pagination */}
                                     <button onClick={() => {
-                                        // setStart(prevState => prevState > data.length ? prevState - limit : 0);
-                                        // setEnd(prevState => prevState - limit);
                                         setCurrentPage(prevState => prevState - 1);
                                         }} className="flex justify-center items-center mr-2" disabled={currentPage === 0}>
                                         <svg width="13" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -90,20 +82,12 @@ const MainContent = ({ data, fetching }) => {
                                         {
                                             pageNumber && pageNumber.map((res, index) => (
                                                 <button onClick={() => {
-                                                    // setCurrentPage(res);
-                                                    // setTimeout(() => {
-                                                    //     console.log('start', (res * currentPage) * limit);
-                                                    // }, 3000);
                                                     paginateNumber(res)
-                                                    // setStart((res * currentPage ) * limit);
-                                                    // setEnd(((res + 1) * currentPage ) * limit);
                                                 }} key={index} className={'mx-2 text-lg ' + (currentPage === res ? ' text-black' : ' text-border')}>{res + 1}</button>
                                             ))
                                         }
 
                                     <button onClick={() => {
-                                        // setStart(prevState => prevState + limit);
-                                        // setEnd(prevState => prevState + end);
                                         setCurrentPage(prevState => prevState + 1);
                                         }} className="flex justify-center items-center ml-2" disabled={currentPage === Math.ceil(data.length/limit) - 1}>
                                         <svg width="13" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg">

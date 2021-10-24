@@ -894,6 +894,10 @@ video {
 	height: 24rem;
 }
 
+.h-auto {
+	height: auto;
+}
+
 .h-\[200px\] {
 	height: 200px;
 }
@@ -944,6 +948,10 @@ video {
 
 .w-min {
 	width: min-content;
+}
+
+.w-auto {
+	width: auto;
 }
 
 .border-collapse {
@@ -1460,6 +1468,10 @@ video {
 
 	.lg\:h-\[22rem\] {
 		height: 22rem;
+	}
+
+	.lg\:h-full {
+		height: 100%;
 	}
 
 	.lg\:grid-cols-12 {
