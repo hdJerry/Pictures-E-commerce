@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import GlobalFunctions from '../../helpers/Global';
 import { AddItem } from '../../store/Cart/actions';
 import { ImageLoader } from '../GlobalStyles';
 import { ProductWrapper } from './Product.style';
@@ -7,6 +8,7 @@ import { ProductWrapper } from './Product.style';
 const Product = ({data}) => {
     const [loading, setLoading] = React.useState(true);
     const dispatch = useDispatch();
+    let { formatMoney } = GlobalFunctions
     return (
         <ProductWrapper>
             <ImageLoader is_loading={loading} className="h-[22rem] relative">
@@ -33,8 +35,9 @@ const Product = ({data}) => {
                 </button>
             </ImageLoader>
 
-            <p className="text-border text-lg font-bold mt-2 capitalize">{data.category}</p>
+            <p className="text-text text-lg font-bold mt-2 capitalize">{data.category}</p>
             <p className="text-2xl font-bold capitalize">{data.name}</p>
+            <p className="text-text text-2xl"> <span className="mr-1">&#36;</span>{formatMoney(data.price)}</p>
             
         </ProductWrapper>
     );

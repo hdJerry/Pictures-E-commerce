@@ -20,7 +20,7 @@ export const CheckBox = styled.label `
         width: 0;
 
         &:checked ~ .checkmark {
-            background-color: var( --secondary-color);
+            background-color: white;
             &::after {
             display: block;
             }
@@ -33,8 +33,8 @@ export const CheckBox = styled.label `
         left: 0;
         height: 20px;
         width: 20px;
-        background-color: #ccc;
-        border-radius: 3px;
+        background-color: #FFF;
+        border: 2px solid black;
 
         &::after {
         content: "";
@@ -44,7 +44,7 @@ export const CheckBox = styled.label `
         top: 2px;
         width: 8px;
         height: 12px;
-        border: solid white;
+        border: solid black;
         border-width: 0 2px 2px 0;
         transform: rotate(45deg);
         }
