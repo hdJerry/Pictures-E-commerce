@@ -11,13 +11,13 @@ const Product = ({data}) => {
     let { formatMoney } = GlobalFunctions
     return (
         <ProductWrapper>
-            <ImageLoader is_loading={loading} className="lg:h-[22rem] relative overflow-hidden">
+            <ImageLoader is_loading={loading} className="h-[30rem] lg:h-[22rem] relative overflow-hidden">
                 {
                     data.bestseller && (
                         <div className="absolute top-0 left-0 text-black bg-white flex justify-center items-center py-1 px-2 text-sm">Best seller</div>
                     )
                 }
-                <img src={data.image.src} alt="specials" className="w-full h-auto lg:h-full object-cover" onLoad={() => setLoading(false)} />
+                <img src={data.image.src} alt="specials" className="w-full h-full object-cover" onLoad={() => setLoading(false)} />
 
                 <button 
                 className="tracking-wider add_to_cart_btn w-full absolute bottom-0 left-0 right-0 flex justify-center items-center px-4 py-3 text-xl text-white bg-black font-bold"
@@ -35,8 +35,8 @@ const Product = ({data}) => {
                 </button>
             </ImageLoader>
 
-            <p className="text-text text-lg font-bold mt-2 capitalize">{data.category}</p>
-            <p className="text-2xl font-bold capitalize">{data.name}</p>
+            <p className="text-text text-lg font-bold mt-2 capitalize truncate">{data.category}</p>
+            <p className="text-2xl font-bold capitalize truncate">{data.name}</p>
             <p className="text-text text-2xl"> <span className="mr-1">&#36;</span>{formatMoney(data.price)}</p>
             
         </ProductWrapper>

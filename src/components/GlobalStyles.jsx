@@ -13,7 +13,7 @@ const loading = keyframes`
 `;
 
 export const Wrapper = styled.div`
-     ${tw `w-full px-0 lg:px-4 xl:px-10 2xl:px-20`};
+     ${tw `w-full px-0 lg:px-2 xl:px-10 2xl:px-20`};
 `;
 
 export const Container = styled.div`
